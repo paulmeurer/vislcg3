@@ -13,6 +13,7 @@
     (unwind-protect
 	 (progn
 	   (u:with-stream-lines (stream line :end-line :eof)
+             ;;(debug line)
 	     (cond ((eq line :eof)
 		    ;; add the last cohort
 		    (when cohort (cg3-sentence-addcohort sentence cohort)))
@@ -27,6 +28,8 @@
 		      (cg3-cohort-setwordform cohort tag)))
 		   ((null cohort)
 		    nil)
+                   ((string= (char line 0) #\<)
+                    nil)
 		   (t
 		    (let* ((reading (cg3-reading-create cohort))
 			   (line (string-trim #(#\space #\tab) line))
