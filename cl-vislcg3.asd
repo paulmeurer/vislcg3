@@ -1,7 +1,7 @@
 (in-package :cl-user)
 
 (asdf:defsystem cl-vislcg3
-  :depends-on (cffi acl-compat utilities)
+  :depends-on (cffi acl-compat utilities fst)
   :serial t
   :components
   ((:file "package")
