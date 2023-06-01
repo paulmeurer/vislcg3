@@ -7,6 +7,9 @@
   (:darwin
    (:default "/usr/local/lib/libcg3"))
   (:unix
+   #+clarino
+   (:default "/usr/local/lib64/libcg3")
+   #-clarino
    (:default "/usr/local/lib/libcg3")))
 
 (use-foreign-library libcg3)
